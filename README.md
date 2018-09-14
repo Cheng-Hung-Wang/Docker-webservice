@@ -2,7 +2,7 @@
 
 ##### Build developer enviroment django + postgresql + react
 
-``For ubuntu 18.04
+```For ubuntu 18.04
 
 # bash install.sh
 # cd dev
