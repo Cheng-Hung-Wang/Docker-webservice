@@ -16,7 +16,7 @@
 ### change django db connection see dev/run.sh content
 # vim backend/core/settings.py
 
-# bild react app
+### bild react app
 #docker-compose run frontend npx create-react-app app
 
 ### change folder permission
