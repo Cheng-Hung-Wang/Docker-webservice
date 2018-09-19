@@ -2,11 +2,13 @@
 
 ##### Build developer enviroment django + postgresql + react
 
-```Install docker tools
+```
+### Install docker tools
 # bash install.sh
 ```
 
-```For ubuntu 18.04 developer enviroment
+```
+### For ubuntu 18.04 developer enviroment
 
 # cd dev
 
@@ -20,17 +22,17 @@
 # vim backend/core/settings.py
 
 ### bild react app
-#docker-compose run frontend npx create-react-app app
+# docker-compose run frontend npx create-react-app app
 
 ### change folder permission
 # cd frontend && sudo chown -R $USER:$USER .
 
 ### modify your package.json
-#vim frontend/app/package.json
+# vim frontend/app/package.json
 
 ### final up docker
-#docker-compose up -d db
-#docker-compose up -d backend frontend
+# docker-compose up -d db
+# docker-compose up -d backend frontend
 ```
 
 
