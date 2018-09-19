@@ -2,9 +2,12 @@
 
 ##### Build developer enviroment django + postgresql + react
 
-```For ubuntu 18.04
-
+```Install docker tools
 # bash install.sh
+```
+
+```For ubuntu 18.04 developer enviroment
+
 # cd dev
 
 ### build django project
