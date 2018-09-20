@@ -3,12 +3,12 @@ services:
 
   db:
     #restart: always
-    container_name: 'postgres'
+    container_name: 'postgres_dev'
     image: postgres
     environment:
         POSTGRES_PASSWORD: password123
     ports:
-        - "5432:5432"
+        - "5431:5431"
 
   backend:
     #restart: always
