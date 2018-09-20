@@ -8,15 +8,18 @@ services:
     environment:
         POSTGRES_PASSWORD: password123
     ports:
-        - "5431:5431"
+        - "5432:5432"
+    volumes:
+        - pgdata:/var/lib/postgresql/data/
+
 
   backend:
     #restart: always
     build: ./backend
     container_name: 'backend'
-    command: python3 backend/manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/usr/src/web
+      - ./backend:/usr/src/web
     ports:
       - "8000:8000"
     links:
@@ -34,3 +37,7 @@ services:
       - '3000:3000'
     environment:
       - NODE_ENV=development
+
+volumes:
+  pgdata:
+

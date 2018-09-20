@@ -1,7 +1,7 @@
 
 # step 1~3 build backend service
 # step 1: use docker-compose build django project
-docker-compose run backend django-admin.py startproject core ./backend
+docker-compose run backend django-admin.py startproject core ./
 
 # step 2: change permission
 sudo chown -R $USER:$USER .
@@ -21,7 +21,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'password123',
         'HOST': 'db',
-        'PORT': 5431,
+        'PORT': 5432,
     }
 }
 BLOCK
@@ -43,3 +43,10 @@ vim frontend/app/package.json
 docker-compose up -d db
 docker-compose up -d backend frontend
 
+
+# open browser
+# backend http://host_ip:8000
+# frontend http://host_ip:3000
+
+# stop container
+docker-compose down
