@@ -21,7 +21,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'password123',
         'HOST': 'db',
-        'PORT': 5432,
+        'PORT': 5431,
     }
 }
 BLOCK
