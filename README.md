@@ -33,6 +33,14 @@
 ### final up docker
 # docker-compose up -d db
 # docker-compose up -d backend frontend
+
+### open browser
+### backend http://host_ip:8000
+### frontend http://host_ip:3000
+
+### stop container
+docker-compose down
+
 ```
 
 
