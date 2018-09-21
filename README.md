@@ -12,7 +12,9 @@
 
 # cd dev
 
+
 ### build django project
+# docker-compose build
 # docker-compose run backend django-admin.py startproject core ./backend
 
 ### change folder permission
