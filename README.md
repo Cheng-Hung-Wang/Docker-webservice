@@ -12,7 +12,6 @@
 
 # cd dev
 
-
 ### build django project
 # docker-compose build
 # docker-compose run backend django-admin.py startproject core ./backend
@@ -46,4 +45,31 @@ docker-compose down
 ```
 
 
+```
+### For ubuntu 18.04 production enviroment
 
+# cd prod
+
+### if you had run dev eniroment, please make sure the continer is close
+## docker-compose rm 
+
+### build image
+# docker-compose build
+
+### copy developer enviroment project to prod/web
+# cp -r ../dev/backend/manage.py web
+# cp -r ../dev/backend/core web
+
+
+### docker-compose up images
+# docker-compose up -d
+ 
+### open browser
+### backend http://host_ip:8080
+
+
+### stop container
+# docker-compose down
+
+
+```

@@ -1,0 +1,43 @@
+version: "3"
+services:
+
+  db:
+    #restart: always
+    container_name: 'postgres_prod'
+    image: postgres
+    environment:
+        POSTGRES_PASSWORD: password123
+    ports:
+        - "5432:5432"
+    volumes:
+        - pgdata:/var/lib/postgresql/data/
+
+  nginx:
+    #restart: always
+    build: ./nginx
+    container_name: 'nginx'
+    command:  nginx -g 'daemon off;'
+    ports:
+      - "8080:80"
+    volumes:
+      - service_data:/usr/src/web
+      - ./nginx/log:/var/log/nginx
+    depends_on:
+      - web
+
+  web:
+    #restart: always
+    build: ./web
+    container_name: 'web'
+    command: uwsgi --ini uwsgi.ini
+    volumes:
+      - service_data:/usr/src/web
+      #- ./web:/usr/src/web
+    links:
+      - db
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+  service_data:
