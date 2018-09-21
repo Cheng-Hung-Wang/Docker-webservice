@@ -1,12 +1,15 @@
 
-# step 1~3 build backend service
-# step 1: use docker-compose build django project
+# step 1 build image
+docker-compose build
+
+# step 2~3 build backend service
+# step 2: use docker-compose build django project
 docker-compose run backend django-admin.py startproject core ./
 
-# step 2: change permission
+# step 3: change permission
 sudo chown -R $USER:$USER .
 
-# step 3: change django db connection
+# step 4: change django db connection
 vim backend/core/settings.py
 
 : <<BLOCK
@@ -26,17 +29,17 @@ DATABASES = {
 }
 BLOCK
 
-# step 4~X build frontend app (react)
-# step 4: user docker-compose build react app frontend(project name)
+# step 5~8 build frontend app (react)
+# step 5: user docker-compose build react app frontend(project name)
 docker-compose run frontend npx create-react-app frontend
 
-# step 5: change permission
+# step 6: change permission
 sudo chown -R $USER:$USER .
 
-# step 6: movie content
+# step 7: movie content
 mv frontend/frontend/* frontend/ && rm -r frontend/frontend
 
-# step 7: modify your package.json
+# step 8: modify your package.json
 vim frontend/app/package.json
 
 # step final:  docker-compose up images
